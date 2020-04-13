@@ -1,4 +1,11 @@
 {
+  "variables": {
+    "azure_client_id": "",
+    "azure_client_secret": "",
+    "azure_subscription_id": "",
+    "azure_tenant_id": ""
+  },
+  
   "builders": [{
     "type": "azure-arm",
     "client_id": "{{user `azure_client_id`}}",
