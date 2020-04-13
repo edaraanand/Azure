@@ -1,0 +1,26 @@
+{
+  "builders": [{
+    "type": "azure-arm",
+    "client_id": "{{user `azure_client_id`}}",
+    "client_secret": "{{user `azure_client_secret`}}",
+    "resource_group_name": "first_love",
+    "storage_account": "firstmemo",
+    "subscription_id": "{{user `azure_subscription_id`}}",
+    "tenant_id": "{{user `azure_tenant_id`}}",
+
+    "capture_container_name": "images",
+    "capture_name_prefix": "packer",
+
+    "os_type": "Linux",
+    "image_publisher": "Canonical",
+    "image_offer": "UbuntuServer",
+    "image_sku": "14.04.4-LTS",
+
+    "azure_tags": {
+      "dept": "engineering"
+    },
+
+    "location": "Central US",
+    "vm_size": "Standard_A2"
+  }]
+}

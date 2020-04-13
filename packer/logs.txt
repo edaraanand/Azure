@@ -1,0 +1,63 @@
+packer_azure_ubuntu.json
+azure-arm: output will be in this color.
+
+==> azure-arm: Running builder ...
+==> azure-arm: Getting tokens using client secret
+==> azure-arm: Getting tokens using client secret
+    azure-arm: Creating Azure Resource Manager (ARM) client ...
+==> azure-arm: Warning: You are using Azure Packer Builder to create VHDs which is being deprecated, consider using Managed Images. Learn more http://aka.ms/packermanagedimage
+==> azure-arm: WARNING: Zone resiliency may not be supported in Central US, checkout the docs at https://docs.microsoft.com/en-us/azure/availability-zones/
+==> azure-arm: Creating resource group ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> Location          : 'Central US'
+==> azure-arm:  -> Tags              :
+==> azure-arm:  ->> dept : engineering
+==> azure-arm: Validating deployment template ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> DeploymentName    : 'pkrdps5caukyf7s'
+==> azure-arm: Deploying deployment template ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> DeploymentName    : 'pkrdps5caukyf7s'
+==> azure-arm: Getting the VM's IP address ...
+==> azure-arm:  -> ResourceGroupName   : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> PublicIPAddressName : 'pkrips5caukyf7s'
+==> azure-arm:  -> NicName             : 'pkrnis5caukyf7s'
+==> azure-arm:  -> Network Connection  : 'PublicEndpoint'
+==> azure-arm:  -> IP Address          : '40.122.108.11'
+==> azure-arm: Waiting for SSH to become available...
+==> azure-arm: Connected to SSH!
+==> azure-arm: Querying the machine's properties ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> ComputeName       : 'pkrvms5caukyf7s'
+==> azure-arm:  -> OS Disk           : 'https://lastmemory.plob.core.windows.net/images/pkross5caukyf7s.vhd'
+==> azure-arm: Querying the machine's additional disks properties ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> ComputeName       : 'pkrvms5caukyf7s'
+==> azure-arm: Powering off machine ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> ComputeName       : 'pkrvms5caukyf7s'
+==> azure-arm: Capturing image ...
+==> azure-arm:  -> Compute ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:  -> Compute Name              : 'pkrvms5caukyf7s'
+==> azure-arm:  -> Compute Location          : 'Central US'
+==> azure-arm: Deleting resource group ...
+==> azure-arm:  -> ResourceGroupName : 'packer-Resource-Group-s5caukyf7s'
+==> azure-arm:
+==> azure-arm: The resource group was created by Packer, deleting ...
+==> azure-arm: Deleting the temporary OS disk ...
+==> azure-arm:  -> OS Disk : 'https://lastmemory.plob.core.windows.net/images/pkross5caukyf7s.vhd'
+==> azure-arm: Deleting the temporary Additional disk ...
+==> azure-arm: Removing the created Deployment object: 'pkrdps5caukyf7s'
+==> azure-arm: ERROR: -> ResourceGroupNotFound : Resource group 'packer-Resource-Group-s5caukyf7s' could not be found.
+==> azure-arm:
+Build 'azure-arm' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> azure-arm: Azure.ResourceManagement.VMImage:
+
+OSType: Linux
+StorageAccountLocation: centralus
+OSDiskUri: https://lastmemory.plob.core.windows.net/system/Microsoft.Compute/Images/images/packer-osDisk.1a837dc5-a7af-4f9f-9c53-aa953a9f91cd.vhd
+OSDiskUriReadOnlySas: https://lastmemory.plob.core.windows.net/system/Microsoft.Compute/Images/images/packer-osDisk.1a837dc5-a7af-4f9f-9c53-aa953a9f91cd.vhd?se=2020-05-13T02%3A48%3A07Z&sig=hxGhx4FbV76qStSQNqudFl38554jkIKbyFzZOXiXwvE%3D&sp=r&sr=b&sv=2016-05-31
+TemplateUri: https://lastmemory.plob.core.windows.net/system/Microsoft.Compute/Images/images/packer-vmTemplate.1a837dc5-a7af-4f9f-9c53-aa953a9f91cd.json
+TemplateUriReadOnlySas: https://lastmemory.plob.core.windows.net/system/Microsoft.Compute/Images/images/packer-vmTemplate.1a837dc5-a7af-4f9f-9c53-aa953a9f91cd.json?se=2020-05-13T02%3A48%3A07Z&sig=Xgl%2B%2F67tvSEjf9mElAtUy%2BFAu6W0f2XB04ZAf3H8C98%3D&sp=r&sr=b&sv=2016-05-31
